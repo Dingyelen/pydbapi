@@ -59,7 +59,7 @@ class SqliteDB(DBMixin, DBFileExec):
     #     return SqliteDB._instance
 
     @classmethod
-    def get_instance(cls, *args, **kwargs):
+    def get_instance(cls, *args, **kwargs): # 单例模式
         if not hasattr(SqliteDB, '_instance'):
             with SqliteDB._instance_lock:
                 if not hasattr(SqliteDB, '_instance'):

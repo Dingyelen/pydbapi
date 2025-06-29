@@ -223,7 +223,7 @@ class SqlStatements:
             return self
         raise Exception("'SqlStatements' object cannot perform sub with multiple statements.")
 
-    def __getattr__(self, item: str):
+    def __getattr__(self, item: str): # 功能查询
         if len(self) == 1:
             single_statement = self.statements[0]
             attribute = getattr(single_statement, item)

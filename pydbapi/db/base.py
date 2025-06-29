@@ -125,7 +125,7 @@ class DBbase(ABC):
         conn = self.get_conn()
         cursor = conn.cursor()
         sqlstmts = self.prepare_sql_statements(sqlstmts, verbose)
-        try: 
+        try: get_conn
             with logging_redirect_tqdm():
                 for idx, stmt in enumerate(sqlstmts):
                     comment, sql, action, tablename = stmt.comment, stmt.sql, stmt.action, stmt.tablename
